@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+## State
+### 1.不要直接修改State
+    this.state.comment = 'Hello';  //此代码不会重新渲染组件
+    而是使用setState();
+    this.setState({comment: 'Hello'});
+    构造函数是唯一可以给this.state 赋值的地方
+### 2. State 的更新可能是异步的
+**总结：setState本身并不是异步，只是因为react的性能优化机制体现为异步。 在react的生命周期函数或者作用域下为异步，在原生的环境下为同步**
+出于性能考虑，React可能会把多个setState()调用合并成一个调用。
+this.props 和 this.state 可能会异步更新，所以不要依赖他们的值来更新下一个状态
+``` js
+    this.setState({
+        counter: this.state.counter + this.props.increment
+    });
+```
+    上面这段代码可能会无法更新计数器
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+    要解决这个问题，可以让setState()接收一个函数而不是一个对象。这个函数用上一个state作为第一个参数，将此次更新被应用时的props做为第二个参数：
+```js
+    this.setState((state,props) => ({
+        counter: state.counter + props.increment
+    }))
+```
+### 3. State 的更新会被合并
+``` js
+// 当你调用setState() 的时候，React会把你的提供的对象合并当前的state。
+// 例如，你的state包含几个独立变量
+constructor(props){
+    super(props);
+    this.state = {
+        posts: [],
+        comments: []
+    }
+}
+// 分别调用setState()来单独地更新它们
+componentDidMount() {
+    fetchPosts().then(response => {
+    this.setState({
+        posts: response.posts
+    });
+    });
 
-## Available Scripts
+    fetchComments().then(response => {
+    this.setState({
+        comments: response.comments
+    });
+    });
+}
+```
+这里的合并是浅合并，所以 this.setState({comments}) 完整保留了 this.state.posts， 但是完全替换了 this.state.comments。
 
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 事件处理
+react中不能通过返回false的方式阻止默认行为。你必须显式的使用preventDefault。
+绑定事件的时候，注意this指向。
