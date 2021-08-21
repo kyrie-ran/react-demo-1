@@ -6,7 +6,8 @@
 // import Router1 from "./components/Router1";
 // import Game from "./components/Game";
 
-import Example from "./hooks/Example";
+// import Example from "./hooks/Example";
+import StateHook from "./hooks/StateHook"
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
           children
       </MySlot> */}
       {/* <Router1 /> */}
-      <Example />
+      {/* <Example /> */}
+      <StateHook />
     </div>
   );
 }
