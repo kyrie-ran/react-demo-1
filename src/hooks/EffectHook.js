@@ -7,6 +7,7 @@ export default function Example() {
     useEffect(() => {
         document.title = `You clicked ${count} times`;
     },[count]) // 仅在 count 更改时更新
+
     return (
         <div>
             <p>{count}</p>
