@@ -52,3 +52,8 @@ componentDidMount() {
 ## 事件处理
 react中不能通过返回false的方式阻止默认行为。你必须显式的使用preventDefault。
 绑定事件的时候，注意this指向。
+
+## 函数式组件和类组件的区别
+1. 函数式组件没有state
+2. 函数式组件没有this
+3. 函数式组件没有 生命周期

@@ -8,6 +8,7 @@
 
 // import Example from "./hooks/Example";
 import StateHook from "./hooks/StateHook"
+import RenderReturn from './components/RenderReturn'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       {/* <Router1 /> */}
       {/* <Example /> */}
       <StateHook />
+      <RenderReturn />
     </div>
   );
 }
