@@ -44,7 +44,7 @@ componentDidMount() {
     this.setState({
         comments: response.comments
     });
-    });
+    }); 
 }
 ```
 这里的合并是浅合并，所以 this.setState({comments}) 完整保留了 this.state.posts， 但是完全替换了 this.state.comments。
@@ -57,3 +57,9 @@ react中不能通过返回false的方式阻止默认行为。你必须显式的�
 1. 函数式组件没有state
 2. 函数式组件没有this
 3. 函数式组件没有 生命周期
+
+## propTypes 验证
+项目中默认使用 Flow 或者 Typescript 那么直接就可以进行类型验证
+否则 也可以通过 prop-types 库来进行参数验证
+
+> 从react v15.5开始，React.PropTypes 已移入另一个包中：prop-types 库

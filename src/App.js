@@ -7,8 +7,9 @@
 // import Game from "./components/Game";
 
 // import Example from "./hooks/Example";
-import StateHook from "./hooks/StateHook"
-import RenderReturn from './components/RenderReturn'
+// import StateHook from "./hooks/StateHook"
+// import RenderReturn from './components/RenderReturn'
+import PropTypesCom from './components/PropTypesCom'
 
 function App() {
   return (
@@ -24,8 +25,9 @@ function App() {
       </MySlot> */}
       {/* <Router1 /> */}
       {/* <Example /> */}
-      <StateHook />
-      <RenderReturn />
+      {/* <StateHook /> */}
+      {/* <RenderReturn /> */}
+      <PropTypesCom name="kyrie" names={['1','2','3']}/>
     </div>
   );
 }
