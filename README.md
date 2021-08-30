@@ -65,3 +65,6 @@ react中不能通过返回false的方式阻止默认行为。你必须显式的�
 > 从react v15.5开始，React.PropTypes 已移入另一个包中：prop-types 库
 
 ## classnames  可以方便的动态更改classname
+
+## react 更新流程
+props/state改变 --> render函数重新执行 --> 产生新的虚拟dom树 --> 新旧dom树进行diff --> 计算出差异更新 --> 更新到真的dom
