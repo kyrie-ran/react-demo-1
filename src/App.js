@@ -9,7 +9,8 @@
 // import Example from "./hooks/Example";
 // import StateHook from "./hooks/StateHook"
 // import RenderReturn from './components/RenderReturn'
-import PropTypesCom from './components/PropTypesCom'
+// import PropTypesCom from './components/PropTypesCom'
+import MyContext from "./components/MyContext";
 
 function App() {
   return (
@@ -27,7 +28,8 @@ function App() {
       {/* <Example /> */}
       {/* <StateHook /> */}
       {/* <RenderReturn /> */}
-      <PropTypesCom name="kyrie" names={['1','2','3']}/>
+      {/* <PropTypesCom name="kyrie" names={['1','2','3']}/> */}
+      <MyContext />
     </div>
   );
 }
