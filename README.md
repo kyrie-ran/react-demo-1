@@ -68,3 +68,51 @@ react中不能通过返回false的方式阻止默认行为。你必须显式的�
 
 ## react 更新流程
 props/state改变 --> render函数重新执行 --> 产生新的虚拟dom树 --> 新旧dom树进行diff --> 计算出差异更新 --> 更新到真的dom
+
+## context
+### API
+- React.createContext
+```js
+    const MyContext = React.createContext(defaultValue);
+```
+创建一个Context对象。这个组件会从组件树中离自身最近的那个匹配 Provider 中读取当前的context值。
+> 注意1： 只有当组件自身所处的树中没有匹配到 Provider 时，其defaultValue 参数才会生效。此默认值有助于在不使用 Provider 包装组件的情况下对组件进行测试。
+> 注意2： 将undefined传递给 Provider 的value时，消费组件的 defaultValue 不会生效。
+
+- Context.Provider
+```js
+    <MyContext.Provider value={/* 某个值 */}>
+        {/*内容*/}
+    </MyContext.Provider>
+```
+每个 Context 对象都会返回一个 Provider React 组件，它允许消费组件订阅 context 的变化。
+Provider 接收一个 value 属性，传递给消费组件。一个Provider 可以和多个消费组件有对应关系。多个 Provider 也可以嵌套使用，里层的会覆盖外层的数据。
+> 注意：当Provider 的value 值发生变化时，它内部的所有消费组件都会重新渲染。Provider 及其内部consumer 组件都不受制于 shouldComponentUpdate 函数，因此当 consumer 组件在其祖先组件退出更新的情况下也能更新。
+
+- Class.contextType
+```js
+    class MyClass extends React.Component {
+        static contextType = MyContext;
+    }
+```
+挂载在class 上的 从contextType 属性会被重赋值为一个由 React.createContext() 创建的 Context 对象。此属性能让你使用
+this.context 来使用最近Context 上的那个值。你可以在任何生命周期中访问打它，包括render
+
+- Context.Consumer
+```js
+    <MyContext.Consumer>
+        {value => /* 基于 context 值进行渲染 */}
+    </MyContext.Consumer>
+```
+一个React 组件可以订阅 context 的变更，此组件可以让你在 函数式组件 中可以订阅 context。
+
+- Context.displayName
+context 对象接受一个名为 displayName 的property， 类型为字符串。React DevTools 使用该字符串来确定 context 要显示的内容
+下述组件在 DevTools 中将显示为 MyDisplayName：
+```js
+    const MyContext = React.createContext(/* some value */);
+    MyContext.displayName = 'MyDisplayName';
+
+    <MyContext.Provider> // "MyDisplayName.Provider" 在 DevTools 中
+    <MyContext.Consumer> // "MyDisplayName.Consumer" 在 DevTools 中
+```

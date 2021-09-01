@@ -10,7 +10,8 @@
 // import StateHook from "./hooks/StateHook"
 // import RenderReturn from './components/RenderReturn'
 // import PropTypesCom from './components/PropTypesCom'
-import MyContext from "./components/MyContext";
+// import MyContext from "./components/MyContext";
+import DynamicContext from "./components/DynamicContext";
 
 function App() {
   return (
@@ -29,7 +30,8 @@ function App() {
       {/* <StateHook /> */}
       {/* <RenderReturn /> */}
       {/* <PropTypesCom name="kyrie" names={['1','2','3']}/> */}
-      <MyContext />
+      {/* <MyContext /> */}
+      <DynamicContext />
     </div>
   );
 }
