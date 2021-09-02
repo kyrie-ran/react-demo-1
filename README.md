@@ -116,3 +116,10 @@ context 对象接受一个名为 displayName 的property， 类型为字符串�
     <MyContext.Provider> // "MyDisplayName.Provider" 在 DevTools 中
     <MyContext.Consumer> // "MyDisplayName.Consumer" 在 DevTools 中
 ```
+## 高阶组件 & 高阶函数
+- 高阶函数（Higher-order function）
+满足一种条件即可：1. 接收一个或多个函数作为输入; 2. 输出一个函数
+比较常见的 filter map reduce 都是高阶函数
+- 高阶组件（Height-order components）,简称为HOC
+官方的定义：高阶组件是参数作为组件，返回值为新组件的函数。
+高阶组件本身不是一个组件，而是一个函数；这个函数的参数是一个组件，返回值也是一个组件
