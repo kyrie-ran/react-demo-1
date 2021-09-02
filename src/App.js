@@ -11,7 +11,8 @@
 // import RenderReturn from './components/RenderReturn'
 // import PropTypesCom from './components/PropTypesCom'
 // import MyContext from "./components/MyContext";
-import DynamicContext from "./components/DynamicContext";
+// import DynamicContext from "./components/DynamicContext";
+import MyRef from "./components/MyRef";
 
 function App() {
   return (
@@ -31,7 +32,8 @@ function App() {
       {/* <RenderReturn /> */}
       {/* <PropTypesCom name="kyrie" names={['1','2','3']}/> */}
       {/* <MyContext /> */}
-      <DynamicContext />
+      {/* <DynamicContext /> */}
+      <MyRef />
     </div>
   );
 }
