@@ -116,6 +116,12 @@ context 对象接受一个名为 displayName 的property， 类型为字符串�
     <MyContext.Provider> // "MyDisplayName.Provider" 在 DevTools 中
     <MyContext.Consumer> // "MyDisplayName.Consumer" 在 DevTools 中
 ```
+
+## Refs
+当ref属性用于HTML元素时，构造函数中使用 React.createRef() 创建 ref 接收底层DOM元素作为其 current 属性。
+当ref 属性用于自定义class 组件时，ref 对象接收组件的挂载实例作为其current属性。
+你不能在函数组件上使用ref属性，因为他们没有实例。
+
 ## 高阶组件 & 高阶函数
 - 高阶函数（Higher-order function）
 满足一种条件即可：1. 接收一个或多个函数作为输入; 2. 输出一个函数
