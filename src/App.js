@@ -12,7 +12,8 @@
 // import PropTypesCom from './components/PropTypesCom'
 // import MyContext from "./components/MyContext";
 // import DynamicContext from "./components/DynamicContext";
-import MyRef from "./components/MyRef";
+// import MyRef from "./components/MyRef";
+import HigherOrder from "./components/HigherOrder";
 
 function App() {
   return (
@@ -33,7 +34,8 @@ function App() {
       {/* <PropTypesCom name="kyrie" names={['1','2','3']}/> */}
       {/* <MyContext /> */}
       {/* <DynamicContext /> */}
-      <MyRef />
+      {/* <MyRef /> */}
+      <HigherOrder />
     </div>
   );
 }
