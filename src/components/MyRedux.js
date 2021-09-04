@@ -1,42 +1,30 @@
-import React, { Component } from 'react'
-import store from '../store';
-import {addAction,subAction,incAction} from '../store/actionCreators'
+import React from 'react';
+import { connect } from '../utils/connect';
+import { addAction, subAction, incAction } from '../store/actionCreators';
 
-export default class MyRedux extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            counter: store.getState().counter
-        }
+const MyRedux = props => (
+    <>
+        当前计数：{props.counter}
+        <hr />
+        <button onClick={e => props.addNumber(5)}>+5</button>
+        <button onClick={e => props.subNumber(6)}>-6</button>
+        <button onClick={e => props.increment()}>递增</button>
+    </>
+)
+
+const mapStateToProps = state => ({
+    counter: state.counter
+})
+const mapDispatchToProps = dispatch => ({
+    increment() {
+        dispatch(incAction());
+    },
+    subNumber(num) {
+        dispatch(subAction(num));
+    },
+    addNumber(num) {
+        dispatch(addAction(num));
     }
-    increment(){
-        store.dispatch(incAction());
-    }
-    addNumber(){
-        store.dispatch(addAction(5));
-    }
-    subNumber(){
-        store.dispatch(subAction(6));
-    }
-    componentDidMount(){
-        this.unsubscribe = store.subscribe(() => {
-            this.setState({
-                counter: store.getState().counter
-            })
-        })
-    }
-    componentWillUnmount(){
-        this.unsubscribe(); // 取消订阅
-    }
-    render() {
-        return (
-            <div>
-                当前计数：{this.state.counter}
-                <hr />
-                <button onClick={e => this.addNumber(5)}>+5</button>
-                <button onClick={e => this.subNumber(6)}>-6</button>
-                <button onClick={e => this.increment()}>递增</button>
-            </div>
-        )
-    }
-}
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(MyRedux);
