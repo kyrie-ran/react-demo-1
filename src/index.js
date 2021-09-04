@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 
+import store from './store';
+import { StoreContext } from './utils/context';
+
 // function formatName(user){
 //     return user.firstName + ' ' + user.lastName;
 // }
@@ -15,8 +18,10 @@ import App from './App';
 
 
 ReactDOM.render(
-  <App />,
-  document.getElementById('root')
+    <StoreContext.Provider value={ store }>
+        <App />
+    </StoreContext.Provider>,
+    document.getElementById('root')
 );
 
 
