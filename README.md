@@ -129,3 +129,28 @@ context 对象接受一个名为 displayName 的property， 类型为字符串�
 - 高阶组件（Higher-order components）,简称为HOC
 官方的定义：高阶组件是参数作为组件，返回值为新组件的函数。
 高阶组件本身不是一个组件，而是一个函数；这个函数的参数是一个组件，返回值也是一个组件
+
+## Redux
+- 核心概念
+    1. state 存放数据
+    2. action 更新数据
+        - 所有数据的变化，必须通过派发(dispatch) action来更新。
+        - action 是一个普通js对象，用来描述这次更新的type和content
+        - 强制使用 action 的好处 是可以清晰的知道数据到底发生了什么样的变化，所有的数据变化都是可追踪、可预测的；
+    3. reducer
+        - 将 state 和 action 联系在一起
+        - reducer是一个纯函数
+        - reducer做的事情就是将传入的state和action结合起来生成一个新的state
+- 三大原则
+    1. 单一数据流
+        - 整个应用程序的state存储在一颗object tree中，并且这个object tree中存储在一个store中；
+        - Redux 并没有强制让我们不能创建多个Store，但是那样做不利于维护
+        - 单一的数据源可以让整个应用程序的state变得方便维护、追踪、修改；
+    2. State是只读的
+        - 唯一修改State的方法一定是触发action，不要试图在其他地方通过任何的方式来修改State
+        - 这样就确保了view或网络请求都不能直接修改state，它们只能通过action来描述自己想要如何修改state
+        - 这样可以保证所有的修改都被集中化处理，并且按照严格的顺序来执行，所有不需要担心race condition(竟态)的问题；
+    3. 使用纯函数来执行修改
+        - 通过reducer将 旧state和action 联系在一起，并且返回一个新的state
+        - 随着应用程序的复杂度增加，我们可以将reducer拆分成多个小的reducers，分别操作不同state tree的一部分
+        - 但是所有的reducer都应该是纯函数，不能产生任何的副作用
