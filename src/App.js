@@ -14,7 +14,8 @@
 // import DynamicContext from "./components/DynamicContext";
 // import MyRef from "./components/MyRef";
 // import HigherOrder from "./components/HigherOrder";
-import MyRedux from "./components/MyRedux";
+// import MyRedux from "./components/MyRedux";
+import MyReactRedux from "./components/MyReactRedux"
 
 function App() {
   return (
@@ -37,7 +38,8 @@ function App() {
       {/* <DynamicContext /> */}
       {/* <MyRef /> */}
       {/* <HigherOrder /> */}
-      <MyRedux />
+      {/* <MyRedux /> */}
+      <MyReactRedux />
     </div>
   );
 }

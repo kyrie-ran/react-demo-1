@@ -4,7 +4,8 @@ import './index.css';
 import App from './App';
 
 import store from './store';
-import { StoreContext } from './utils/context';
+// import { StoreContext } from './utils/context';
+import {Provider} from 'react-redux';
 
 // function formatName(user){
 //     return user.firstName + ' ' + user.lastName;
@@ -18,11 +19,18 @@ import { StoreContext } from './utils/context';
 
 
 ReactDOM.render(
-    <StoreContext.Provider value={ store }>
+    <Provider store={ store }>
         <App />
-    </StoreContext.Provider>,
+    </Provider>,
     document.getElementById('root')
 );
+
+// ReactDOM.render(
+//     <StoreContext.Provider value={ store }>
+//         <App />
+//     </StoreContext.Provider>,
+//     document.getElementById('root')
+// );
 
 
 
