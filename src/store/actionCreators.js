@@ -1,4 +1,4 @@
-import {ADD_NUMBER,SUB_NUMBER,INCREMENT} from './constants.js';
+import {ADD_NUMBER,SUB_NUMBER,INCREMENT,CHANGE_RECOMMEND,CHANGE_BANNERS} from './constants.js';
 
 export const addAction = num => (
     {
@@ -19,3 +19,12 @@ export const incAction = () => (
         type: INCREMENT
     }
 )
+
+export const changeBannersAction = banners => ({
+    type: CHANGE_BANNERS,
+    banners
+})
+export const changeRecommendAction = recommends => ({
+    type: CHANGE_RECOMMEND,
+    recommends
+})

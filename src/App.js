@@ -15,7 +15,8 @@
 // import MyRef from "./components/MyRef";
 // import HigherOrder from "./components/HigherOrder";
 // import MyRedux from "./components/MyRedux";
-import MyReactRedux from "./components/MyReactRedux"
+// import MyReactRedux from "./components/MyReactRedux";
+import MyClassReactRedux from "./components/MyClassReactRedux";
 
 function App() {
   return (
@@ -39,7 +40,8 @@ function App() {
       {/* <MyRef /> */}
       {/* <HigherOrder /> */}
       {/* <MyRedux /> */}
-      <MyReactRedux />
+      {/* <MyReactRedux /> */}
+      <MyClassReactRedux />
     </div>
   );
 }
