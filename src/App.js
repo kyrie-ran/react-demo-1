@@ -17,7 +17,8 @@
 // import MyRedux from "./components/MyRedux";
 // import MyReactRedux from "./components/MyReactRedux";
 // import MyClassReactRedux from "./components/MyClassReactRedux";
-import MyReduxThunk from "./components/MyReduxThunk";
+// import MyReduxThunk from "./components/MyReduxThunk";
+import MyReduxSaga from "./components/MyReduxSaga";
 
 function App() {
   return (
@@ -43,7 +44,8 @@ function App() {
       {/* <MyRedux /> */}
       {/* <MyReactRedux /> */}
       {/* <MyClassReactRedux /> */}
-      <MyReduxThunk />
+      {/* <MyReduxThunk /> */}
+      <MyReduxSaga />
     </div>
   );
 }
