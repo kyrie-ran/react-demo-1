@@ -1,53 +1,40 @@
-// import Clock from "./components/Clock";
-// import Event from "./components/Event";
-// import List from "./components/List";
-// import MyForm from "./components/MyForm";
-// import MySlot from "./components/MySlot";
-// import Router1 from "./components/Router1";
-// import Game from "./components/Game";
+import React, { Component } from 'react';
+import {NavLink,Route,Switch,withRouter} from 'react-router-dom';
+import About from './pages/about';
+import Home from './pages/home';
+import Login from './pages/login';
+import My from './pages/my';
+class App extends Component {
+    goHome = () => {
+        const {replace} = this.props.history;
+        replace('/');
+        // console.log(this.props);
+    }
+    render() {
+        return (
+            <div>
+                {/* <BrowserRouter> */}
+                    {/* <Link to="/">首页</Link>
+                    <Link to="/about">关于</Link> */}
+                    {/* <NavLink exact to="/" activeStyle={{color: 'red'}}>首页</NavLink>
+                    <NavLink to="/about" activeStyle={{color: 'red'}}>关于</NavLink> */}
 
-// import Example from "./hooks/Example";
-// import StateHook from "./hooks/StateHook"
-// import RenderReturn from './components/RenderReturn'
-// import PropTypesCom from './components/PropTypesCom'
-// import MyContext from "./components/MyContext";
-// import DynamicContext from "./components/DynamicContext";
-// import MyRef from "./components/MyRef";
-// import HigherOrder from "./components/HigherOrder";
-// import MyRedux from "./components/MyRedux";
-// import MyReactRedux from "./components/MyReactRedux";
-// import MyClassReactRedux from "./components/MyClassReactRedux";
-// import MyReduxThunk from "./components/MyReduxThunk";
-import MyReduxSaga from "./components/MyReduxSaga";
+                    <NavLink exact to="/" activeClassName="link-active">首页</NavLink>
+                    <NavLink to="/about" activeClassName="link-active">关于</NavLink>
+                    <NavLink to="/my" activeClassName="link-active">我的</NavLink>
+                    
+                    <button onClick={this.goHome}>回首页</button>
 
-function App() {
-  return (
-    <div className="App">
-      {/* <Game /> */}
-      {/* <Clock date={new Date()}/> */}
-      {/* <Clock /> */}
-      {/* <Event /> */}
-      {/* <List /> */}
-      {/* <MyForm /> */}
-      {/* <MySlot left={' left'} right={' right'}>
-          children
-      </MySlot> */}
-      {/* <Router1 /> */}
-      {/* <Example /> */}
-      {/* <StateHook /> */}
-      {/* <RenderReturn /> */}
-      {/* <PropTypesCom name="kyrie" names={['1','2','3']}/> */}
-      {/* <MyContext /> */}
-      {/* <DynamicContext /> */}
-      {/* <MyRef /> */}
-      {/* <HigherOrder /> */}
-      {/* <MyRedux /> */}
-      {/* <MyReactRedux /> */}
-      {/* <MyClassReactRedux /> */}
-      {/* <MyReduxThunk /> */}
-      <MyReduxSaga />
-    </div>
-  );
+                    <Switch>
+                        <Route exact path="/" component={Home}/>
+                        <Route path="/about" component={About}/>
+                        <Route path="/my" component={My}/>
+                        <Route path="/login" component={Login}/>
+                    </Switch>
+                {/* </BrowserRouter> */}
+            </div>
+        )
+    }
 }
 
-export default App;
+export default withRouter(App);
