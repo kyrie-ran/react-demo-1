@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import {NavLink,Route,Switch,withRouter} from 'react-router-dom';
-import About from './pages/about';
-import Detail from './pages/detail';
-import Home from './pages/home';
-import Login from './pages/login';
-import My from './pages/my';
+// import {NavLink,Route,Switch,withRouter} from 'react-router-dom';
+import {NavLink,withRouter} from 'react-router-dom';
+import {renderRoutes} from 'react-router-config';
+import routes from './router';
 
 class App extends Component {
     
@@ -30,14 +28,15 @@ class App extends Component {
                     
                     <button onClick={this.goHome}>回首页</button>
 
-                    <Switch>
+                    {/* <Switch>
                         <Route exact path="/" component={Home}/>
                         <Route path="/about/:id" component={About}/>
                         <Route path="/my" component={My}/>
                         <Route path="/login" component={Login}/>
                         <Route path="/detail" component={Detail}/>
-                    </Switch>
+                    </Switch> */}
                 {/* </BrowserRouter> */}
+                {renderRoutes(routes)}
             </div>
         )
     }
