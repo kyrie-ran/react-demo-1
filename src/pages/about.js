@@ -7,9 +7,10 @@ export default class About extends Component {
     }
     
     render() {
+        const {id} = this.props.match.params;
         return (
             <div>
-                about
+                about {id}
                 <button onClick={this.jump}>跳转登录页</button>
             </div>
         )

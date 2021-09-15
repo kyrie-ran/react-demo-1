@@ -6,11 +6,12 @@ export default class My extends Component {
         super(props)
     
         this.state = {
-             isLogin: false
+             isLogin: true
         }
     }
     
     render() {
+        console.log(this.props.location);
         return this.state.isLogin ? (
             <div>
                 my
