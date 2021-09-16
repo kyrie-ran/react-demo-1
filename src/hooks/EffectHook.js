@@ -6,6 +6,9 @@ export default function Example() {
     // 相当于 componentDidMount 和 componentDidUpdate
     useEffect(() => {
         document.title = `You clicked ${count} times`;
+        return () => {
+            // 清除副作用  取消订阅的地方
+        }
     },[count]) // 仅在 count 更改时更新
 
     return (
