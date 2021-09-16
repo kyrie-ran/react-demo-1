@@ -176,3 +176,7 @@ context 对象接受一个名为 displayName 的property， 类型为字符串�
     - 当渲染过程，生命周期，或子组件的构造函数中抛出错误时，会调用如下方法：
         - static getDerivedStateFromError()
         - componentDidCatch()
+
+> getDerivedStateFromProps(props,state) 会在调用render方法之前调用，并且在初始挂载及后续更新时都会被调用。它应返回一个对象来更新state，如果返回null则不更新任何内容。
+
+> getSnapshotBeforeUpdate(prevProps, prevState) 在最近一次渲染输出（提交DOM节点）之前调用。它使得组件能在发生改变之前从DOM中捕获一些信息（例如，滚动位置），此生命周期方法的任何返回值作为参数传递给 componentDidUpdate()

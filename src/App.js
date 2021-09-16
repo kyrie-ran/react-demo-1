@@ -19,37 +19,48 @@
 // import MyClassReactRedux from "./components/MyClassReactRedux";
 // import MyReduxThunk from "./components/MyReduxThunk";
 // import MyReduxSaga from "./components/MyReduxSaga";
-import ComplexHookState from "./hooks/ComplexHookState";
+// import ComplexHookState from "./hooks/ComplexHookState";
+import UseContextDemo from "./hooks/UseContext";
+import { createContext } from "react";
+
+
+export const UserContext = createContext();
+export const ThemeContext = createContext();
 
 function App() {
-  return (
-    <div className="App">
-      {/* <Game /> */}
-      {/* <Clock date={new Date()}/> */}
-      {/* <Clock /> */}
-      {/* <Event /> */}
-      {/* <List /> */}
-      {/* <MyForm /> */}
-      {/* <MySlot left={' left'} right={' right'}>
+    return (
+        <div className="App">
+            {/* <Game /> */}
+            {/* <Clock date={new Date()}/> */}
+            {/* <Clock /> */}
+            {/* <Event /> */}
+            {/* <List /> */}
+            {/* <MyForm /> */}
+            {/* <MySlot left={' left'} right={' right'}>
           children
       </MySlot> */}
-      {/* <Router1 /> */}
-      {/* <Example /> */}
-      {/* <StateHook /> */}
-      {/* <RenderReturn /> */}
-      {/* <PropTypesCom name="kyrie" names={['1','2','3']}/> */}
-      {/* <MyContext /> */}
-      {/* <DynamicContext /> */}
-      {/* <MyRef /> */}
-      {/* <HigherOrder /> */}
-      {/* <MyRedux /> */}
-      {/* <MyReactRedux /> */}
-      {/* <MyClassReactRedux /> */}
-      {/* <MyReduxThunk /> */}
-      {/* <MyReduxSaga /> */}
-      <ComplexHookState />
-    </div>
-  );
+            {/* <Router1 /> */}
+            {/* <Example /> */}
+            {/* <StateHook /> */}
+            {/* <RenderReturn /> */}
+            {/* <PropTypesCom name="kyrie" names={['1','2','3']}/> */}
+            {/* <MyContext /> */}
+            {/* <DynamicContext /> */}
+            {/* <MyRef /> */}
+            {/* <HigherOrder /> */}
+            {/* <MyRedux /> */}
+            {/* <MyReactRedux /> */}
+            {/* <MyClassReactRedux /> */}
+            {/* <MyReduxThunk /> */}
+            {/* <MyReduxSaga /> */}
+            {/* <ComplexHookState /> */}
+            <UserContext.Provider value={{name: 'aaa',age: 18}}>
+                <ThemeContext.Provider value={{fontSize: "30px",color: "red"}}>
+                    <UseContextDemo />
+                </ThemeContext.Provider>
+            </UserContext.Provider>
+        </div>
+    );
 }
 
 export default App;
