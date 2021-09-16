@@ -20,12 +20,13 @@
 // import MyReduxThunk from "./components/MyReduxThunk";
 // import MyReduxSaga from "./components/MyReduxSaga";
 // import ComplexHookState from "./hooks/ComplexHookState";
-import UseContextDemo from "./hooks/UseContext";
-import { createContext } from "react";
+// import UseContextDemo from "./hooks/UseContext";
+import MyUseReducer from "./hooks/MyUseReducer";
+// import { createContext } from "react";
 
 
-export const UserContext = createContext();
-export const ThemeContext = createContext();
+// export const UserContext = createContext();
+// export const ThemeContext = createContext();
 
 function App() {
     return (
@@ -54,11 +55,12 @@ function App() {
             {/* <MyReduxThunk /> */}
             {/* <MyReduxSaga /> */}
             {/* <ComplexHookState /> */}
-            <UserContext.Provider value={{name: 'aaa',age: 18}}>
+            {/* <UserContext.Provider value={{name: 'aaa',age: 18}}>
                 <ThemeContext.Provider value={{fontSize: "30px",color: "red"}}>
                     <UseContextDemo />
                 </ThemeContext.Provider>
-            </UserContext.Provider>
+            </UserContext.Provider> */}
+            <MyUseReducer />
         </div>
     );
 }
