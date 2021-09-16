@@ -154,3 +154,25 @@ context 对象接受一个名为 displayName 的property， 类型为字符串�
         - 通过reducer将 旧state和action 联系在一起，并且返回一个新的state
         - 随着应用程序的复杂度增加，我们可以将reducer拆分成多个小的reducers，分别操作不同state tree的一部分
         - 但是所有的reducer都应该是纯函数，不能产生任何的副作用
+
+## 生命周期
+- 挂载
+    - 当组件实例被创建并插入DOM中时，其生命周期调用顺序如下：
+        - constructor()
+        - static getDerivedStateFromProps()
+        - render()
+        - componentDidMount() 组件挂载之后
+- 更新
+    - 当组件的props或state发生变化时会触发更新。组件更新的生命周期调用顺序如下：
+        - static getDerivedStateFromProps()
+        - shouldComponentUpdate()
+        - render()
+        - getSnapshotBeforeUpdate()
+        - componentDidUpdate() 组件更新之后
+- 卸载
+    - 当组件从DOM中移出时
+        - componentWillUnmount() 组件卸载或销毁之前调用
+- 错误处理
+    - 当渲染过程，生命周期，或子组件的构造函数中抛出错误时，会调用如下方法：
+        - static getDerivedStateFromError()
+        - componentDidCatch()
