@@ -23,7 +23,8 @@
 // import UseContextDemo from "./hooks/UseContext";
 // import MyUseReducer from "./hooks/MyUseReducer";
 // import UseCallback from "./hooks/UseCallback";
-import UseMemo from "./hooks/UseMemo";
+// import UseMemo from "./hooks/UseMemo";
+import UseRef from "./hooks/UseRef";
 // import { createContext } from "react";
 
 
@@ -64,7 +65,8 @@ function App() {
             </UserContext.Provider> */}
             {/* <MyUseReducer /> */}
             {/* <UseCallback /> */}
-            <UseMemo />
+            {/* <UseMemo /> */}
+            <UseRef />
         </div>
     );
 }

@@ -1,7 +1,7 @@
 import React, { useState, useMemo, memo } from 'react';
 const HYINfo = memo(props => {
     console.log(222);
-    return <p>姓名：{props.info.name} 年龄：{props.info.age}</p>;
+    return <p>name：{props.info.name} age：{props.info.age}</p>;
 })
 function calcNumber(count) {
     console.log(111);
