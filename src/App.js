@@ -21,7 +21,8 @@
 // import MyReduxSaga from "./components/MyReduxSaga";
 // import ComplexHookState from "./hooks/ComplexHookState";
 // import UseContextDemo from "./hooks/UseContext";
-import MyUseReducer from "./hooks/MyUseReducer";
+// import MyUseReducer from "./hooks/MyUseReducer";
+import UseCallback from "./hooks/UseCallback";
 // import { createContext } from "react";
 
 
@@ -60,7 +61,8 @@ function App() {
                     <UseContextDemo />
                 </ThemeContext.Provider>
             </UserContext.Provider> */}
-            <MyUseReducer />
+            {/* <MyUseReducer /> */}
+            <UseCallback />
         </div>
     );
 }
