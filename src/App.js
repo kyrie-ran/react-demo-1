@@ -25,7 +25,8 @@
 // import UseCallback from "./hooks/UseCallback";
 // import UseMemo from "./hooks/UseMemo";
 // import UseRef from "./hooks/UseRef";
-import UseImperativeHandle from "./hooks/UseImperativeHandle";
+// import UseImperativeHandle from "./hooks/UseImperativeHandle";
+import UseLayoutEffect from "./hooks/UseLayoutEffect";
 // import { createContext } from "react";
 
 
@@ -68,7 +69,8 @@ function App() {
             {/* <UseCallback /> */}
             {/* <UseMemo /> */}
             {/* <UseRef /> */}
-            <UseImperativeHandle />
+            {/* <UseImperativeHandle /> */}
+            <UseLayoutEffect />
         </div>
     );
 }
