@@ -24,7 +24,8 @@
 // import MyUseReducer from "./hooks/MyUseReducer";
 // import UseCallback from "./hooks/UseCallback";
 // import UseMemo from "./hooks/UseMemo";
-import UseRef from "./hooks/UseRef";
+// import UseRef from "./hooks/UseRef";
+import UseImperativeHandle from "./hooks/UseImperativeHandle";
 // import { createContext } from "react";
 
 
@@ -66,7 +67,8 @@ function App() {
             {/* <MyUseReducer /> */}
             {/* <UseCallback /> */}
             {/* <UseMemo /> */}
-            <UseRef />
+            {/* <UseRef /> */}
+            <UseImperativeHandle />
         </div>
     );
 }
