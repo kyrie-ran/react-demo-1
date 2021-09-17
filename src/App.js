@@ -22,7 +22,8 @@
 // import ComplexHookState from "./hooks/ComplexHookState";
 // import UseContextDemo from "./hooks/UseContext";
 // import MyUseReducer from "./hooks/MyUseReducer";
-import UseCallback from "./hooks/UseCallback";
+// import UseCallback from "./hooks/UseCallback";
+import UseMemo from "./hooks/UseMemo";
 // import { createContext } from "react";
 
 
@@ -62,7 +63,8 @@ function App() {
                 </ThemeContext.Provider>
             </UserContext.Provider> */}
             {/* <MyUseReducer /> */}
-            <UseCallback />
+            {/* <UseCallback /> */}
+            <UseMemo />
         </div>
     );
 }
