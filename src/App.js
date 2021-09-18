@@ -26,7 +26,8 @@
 // import UseMemo from "./hooks/UseMemo";
 // import UseRef from "./hooks/UseRef";
 // import UseImperativeHandle from "./hooks/UseImperativeHandle";
-import UseLayoutEffect from "./hooks/UseLayoutEffect";
+// import UseLayoutEffect from "./hooks/UseLayoutEffect";
+import CustomHook from "./hooks/CustomHook";
 // import { createContext } from "react";
 
 
@@ -70,7 +71,8 @@ function App() {
             {/* <UseMemo /> */}
             {/* <UseRef /> */}
             {/* <UseImperativeHandle /> */}
-            <UseLayoutEffect />
+            {/* <UseLayoutEffect /> */}
+            <CustomHook />
         </div>
     );
 }
